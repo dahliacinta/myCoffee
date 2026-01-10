@@ -58,13 +58,13 @@ The objectives of this system are:
 ## Screenshots
 
 ### Home Page
-![Home Page](screenshots/screenshot-HomePage.png)
+![Home Page](screenshots/screenshot-HomePage.jpeg)
 
 ### Packages Page
 ![Packages Page](screenshots/screenshot-Packages.png)
 
 ### Reservation Form
-![Reservation Form](screenshots/screenshot-BookingForm.png)
+![Reservation Form](screenshots/screenshot-BookingForm.jpeg)
 
 ### My Bookings Page
 ![My Bookings](screenshots/screenshot-Mybookings.png)
