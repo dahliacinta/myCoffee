@@ -45,15 +45,30 @@ The objectives of this system are:
 
 
 ## Technical Implementation
+** Technology Stack**
 
+- Backend Framework: Laravel 10.x
+- Frontend: Blade Templates with Bootstrap 5
+- Database: MySQL 8.0
+- Authentication: Laravel Breeze
+- Image Storage: Laravel File Storage
+- Development Environment: XAMPP
 
 ---
 ** Database Design**
+Database Schema Overview
+Our database consists of [X] main tables designed to handle users, restaurants, menus, orders, and related data:
+Core Tables:
 
+- users
+- 
 ### Entity Relationship Diagram (ERD)
+https://drive.google.com/file/d/1M581HbGbgGo_6I07NI9Z8xIYBwOJd6Ia/view?usp=sharing
 
 Key Relationships:
-
+- Package can have many reservation details ( One to Many )
+- Reservation Details can have many reservation update ( One to Many )
+- Reservation details can have many or none cancelled reservation ( One to One (optional))
 
 ** Laravel Components Implementation**
 - Routes (Web.php)
@@ -93,21 +108,15 @@ Route::middleware([
 - Controllers
   
   *Main Controllers Implemented are below :*
- 1.BookingController :  
+ 1.BookingController :Displays all bookings for the currently authenticated user  
 
 
 - Models and Relationships
 
 ---
 
-//Booking Model
-<?php
 
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
+<?php//Booking Model
 class Booking extends Model
 {
     use HasFactory;
@@ -139,12 +148,6 @@ class Booking extends Model
 ---
 
 //Membership Model
-<?php
-
-namespace App\Models;
-
-use Laravel\Jetstream\Membership as JetstreamMembership;
-
 class Membership extends JetstreamMembership
 {
     /**
@@ -157,16 +160,6 @@ class Membership extends JetstreamMembership
 ---
 
 //Team Model
-<?php
-
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Laravel\Jetstream\Events\TeamCreated;
-use Laravel\Jetstream\Events\TeamDeleted;
-use Laravel\Jetstream\Events\TeamUpdated;
-use Laravel\Jetstream\Team as JetstreamTeam;
-
 class Team extends JetstreamTeam
 {
     /** @use HasFactory<\Database\Factories\TeamFactory> */
@@ -208,14 +201,6 @@ class Team extends JetstreamTeam
 ---
 
 //TeamInvitation Model
-<?php
-
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Laravel\Jetstream\Jetstream;
-use Laravel\Jetstream\TeamInvitation as JetstreamTeamInvitation;
-
 class TeamInvitation extends JetstreamTeamInvitation
 {
     /**
@@ -240,15 +225,6 @@ class TeamInvitation extends JetstreamTeamInvitation
 ---
 
 //User Model
-<?php
-
-namespace App\Models;
-
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
@@ -425,16 +401,16 @@ This project offers hands-on experience in developing real-world web application
 ## Screenshots
 
 ### Home Page
-![Home Page](screenshots/screenshot-HomePage.jpeg)
+[Home Page](screenshots/screenshot-HomePage.jpeg)
 
 ### Packages Page
-![Packages Page](screenshots/screenshot-Packages.png)
+[Packages Page](screenshots/screenshot-Packages.png)
 
 ### Reservation Form
-![Reservation Form](screenshots/screenshot-BookingForm.jpeg)
+[Reservation Form](screenshots/screenshot-BookingForm.jpeg)
 
 ### My Bookings Page
-![My Bookings](screenshots/screenshot-Mybookings.png)
+[My Bookings](screenshots/screenshot-Mybookings.png)
 
 
 ---
