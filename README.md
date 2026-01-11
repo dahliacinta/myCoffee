@@ -60,8 +60,12 @@ Database Schema Overview
 Our database consists of [X] main tables designed to handle users, restaurants, menus, orders, and related data:
 Core Tables:
 
-- users
-- 
+- users - customers login accounts information
+- booking - bookings information
+- membership -
+- teams
+- team_invitations
+
 ### Entity Relationship Diagram (ERD)
 https://drive.google.com/file/d/1M581HbGbgGo_6I07NI9Z8xIYBwOJd6Ia/view?usp=sharing
 
@@ -112,10 +116,6 @@ Route::middleware([
 
 
 - Models and Relationships
-
----
-
-
 <?php//Booking Model
 class Booking extends Model
 {
@@ -268,16 +268,20 @@ class User extends Authenticatable
 
 - Views and User Interface
 *Blade Templates Structure:*
-- dashboard.blade.php -
-- home.blade.php -
-- navigation-menu.php - 
-- policy.blade.php -
-- terms.blade.php -
+- dashboard.blade.php - dashboard page for users after login.
+- home.blade.php - homepage for reservation that introduces the cafe
+- navigation-menu.php - responsive navigation menu with user, team, and dashboard links for desktop and mobile.
+- policy.blade.php - displays a guest layout 
+- terms.blade.php - displays a guest layout showing the terms and conditions content.
 
 ---
 
  *Design Features:*
- - 
+- Responsive Design: Built with Bootstrap 5 for a mobile-first layout.
+- Color Scheme: Gray and peach theme reflecting the cafe.
+- Navigation: Intuitive booking with options based on pax.
+- Interactive Elements: Dynamic cart updates and real-time order tracking.
+
 ## User Authentication System
 ### ** Authentication Features**
 - **Registration System**: Email validation, password confirmation, role selection
