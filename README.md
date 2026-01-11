@@ -27,7 +27,7 @@ The objectives of this system are:
 ## Target Users
 - Customers : Individuals looking to book coffee catering
 - Owners : Owners who want to manage bookings effectively digitally
-- Administrators : System managers who oversee the platform
+
 
 ## Features and Functionalities
 - Home page showcase: Display service offered such as professional baristas, fresh - ingredients, handcrafted drinks, event catering, and mobile coffee.
@@ -42,7 +42,6 @@ The objectives of this system are:
 - Footer information: Provides location, social media links and contact details.
 
 ---
-**Admin Features**
 
 
 ## Technical Implementation
@@ -98,6 +97,9 @@ Route::middleware([
 
 
 - Models and Relationships
+
+---
+
 //Booking Model
 <?php
 
@@ -133,6 +135,9 @@ class Booking extends Model
     }
     
 }
+
+---
+
 //Membership Model
 <?php
 
@@ -149,6 +154,8 @@ class Membership extends JetstreamMembership
      */
     public $incrementing = true;
 }
+---
+
 //Team Model
 <?php
 
@@ -198,6 +205,8 @@ class Team extends JetstreamTeam
         ];
     }
 }
+---
+
 //TeamInvitation Model
 <?php
 
@@ -227,6 +236,8 @@ class TeamInvitation extends JetstreamTeamInvitation
         return $this->belongsTo(Jetstream::teamModel());
     }
 }
+
+---
 
 //User Model
 <?php
@@ -277,6 +288,7 @@ class User extends Authenticatable
         ];
     }
 }
+---
 
 - Views and User Interface
 *Blade Templates Structure:*
@@ -286,12 +298,21 @@ class User extends Authenticatable
 - policy.blade.php -
 - terms.blade.php -
 
+---
+
  *Design Features:*
  - 
 ## User Authentication System
-- 
+### ** Authentication Features**
+- **Registration System**: Email validation, password confirmation, role selection
+- **Login System**: Secure authentication with "Remember Me" option
+
+---
+
 ### **Security Measures**
 - 
+
+---
 
 ## Installation and Setup Instructions
 ### Prerequisites :
@@ -310,40 +331,95 @@ class User extends Authenticatable
 ---
 ## Testing and Quality Assurance
 ###  Functionality Testing
+- User registration and login system
+- Coffee packages browsing and display
+- Active bookings display
+- Responsive design across devices
 
+---
 ### Browser Compatibility
+-  Google Chrome (Latest)
+-  Mozilla Firefox (Latest)
+-  Safari (Latest)
+-  Microsoft Edge (Latest)
 
+---
 ### Performance Testing
-
+- Fast Page Load: Ensured all pages load in under 3 seconds for optimal user experience
+- Database Optimization: Queries were optimized to reduce load times and improve efficiency
+- Image Optimization: Compressed images without compromising quality to enhance performance
+- Responsive Testing: Verified that the system works seamlessly across desktops, tablets, and mobile devices
+---
 ## Challenges Faced and Solutions
-### Challenge 1:
-
-
+### Challenge 1:Ensuring Mobile Responsiveness
+- Problem: Users needed to make reservations easily on phones, tablets, and desktops.
+- Solution: Utilized Bootstrap and responsive design techniques to create a consistent and user-friendly interface across all devices.
+### Challenge 2: Complex Reservation Management
+- Problem: Handling relationships between reservations, coffee packages, and customer details was complicated, especially for multiple bookings and updates.
+- Solution: Implemented proper Eloquent relationships with pivot tables for many-to-many connections, ensuring accurate tracking of reservations and package selections.
+---
 ## Future Enhancements
 ### Phase 2 Features (Potential Improvements)
--
+- Live Notifications: Instant alerts for reservation confirmations, updates, and changes
+- Online Payment Support: Integration with secure payment gateways such as Stripe or PayPal
+- Location-Based Tracking: Map-based tracking for catering delivery and event locations
+- Customer Feedback Module: Ratings and reviews to improve service quality
+- Data Analytics Dashboard: Insights into booking patterns, revenue, and customer behavior
+- Custom Package Builder: Let users create their own coffee catering packages with flexible options
+- Mobile Application: Dedicated iOS and Android apps for convenient access
+- Inventory Alerts: Notify staff of ingredient or stock shortages to prevent overbooking
+---
 ### Scalability Considerations
-- 
+- Database optimization to efficiently handle larger datasets
+- Implementation of caching mechanisms to improve system performance
+- API development to support mobile application integration
+- Load balancing strategies to ensure reliability under high-traffic scenarios
 
-
+---
 ## Learning Outcomes
 ### Technical Skills Gained
--
--
-### Soft Skills Developed
 
+- Laravel Framework: Applied MVC architecture and Eloquent ORM for structured application development
+- Database Design: Designed efficient database schemas and managed relational data
+- Authentication: Implemented secure user authentication and authorization mechanisms
+- Frontend Development: Built responsive and user-friendly interfaces using Bootstrap
+- Version Control: Utilized Git and GitHub for effective version control and collaborative project management
+
+---
+### Soft Skills Developed
+- **Team Collaboration** : Working effectively and cooperatively within a group environment
+- **Project Management** : Planning, organizing, and executing a complex web application project
+- **Problem Solving** : Identifying, debugging, and resolving technical challenges
+- **Documentation** : Producing clear and comprehensive project documentation
+
+---
 
 ## References
 - Figma Prototype: Coffee Catering Reservation System
 - Easy Eat. (2025). https://easyeat.ai/r/landsnpeople/2
 
+---
+
 ## Conclusion
+Our coffee reservation system successfully demonstrates the implementation of a comprehensive coffee reservation system using the Laravel framework. The project highlights proficiency in core web development principles, including MVC architecture, database design, user authentication, and responsive web design.
+
+---
 
 ### Key Achievements
+- Successfully implemented all required Laravel components (Routes, Controllers, Views, and Models)
+- Designed and developed a functional coffee reservation system with user role management
+- Built a responsive and user-friendly interface for seamless reservation and ordering
+- Demonstrated a strong understanding of database relationships and full CRUD operations
+- Applied security best practices for user authentication and access control
+
+---
 
 ### Project Impact
+This project offers hands-on experience in developing real-world web applications and highlights the ability to collaborate effectively within a team. The skills acquired through this project are highly relevant and transferable to professional web development environments.
+- Project Completion Date: 11/1/2026
+- Course: INFO 3305 Web Application Development
 
-
+---
 
 
 ## Screenshots
